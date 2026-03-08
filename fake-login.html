@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تسجيل دخول وهمية - تعليمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .fake-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .fake-container {
+            max-width: 450px;
+            width: 100%;
+        }
+        
+        .brand-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .brand-header i {
+            font-size: 4rem;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .brand-header h1 {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .fake-login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .fake-login-box h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .warning-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-right: 5px solid #ffc107;
+        }
+        
+        .warning-badge i {
+            font-size: 1.5rem;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .input-group label i {
+            margin-left: 8px;
+            color: #667eea;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+        }
+        
+        .forgot-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+        
+        .security-tips {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .security-tips h3 {
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .security-tips ul {
+            list-style: none;
+        }
+        
+        .security-tips li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+        }
+        
+        .security-tips li i {
+            color: #28a745;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+        
+        .back-link a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="fake-page">
+        <div class="fake-container">
+            <!-- الهيدر -->
+            <div class="brand-header">
+                <i class="fas fa-shield-halved"></i>
+                <h1>وعي للتصيد الاحتيالي</h1>
+            </div>
+            
+            <!-- صندوق تسجيل الدخول الوهمي -->
+            <div class="fake-login-box">
+                <div class="warning-badge">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>⚠️ هذه صفحة تعليمية توضح كيف تبدو صفحات التصيد - لا تدخل بيانات حقيقية!</span>
+                </div>
+                
+                <h2><i class="fas fa-lock"></i> تسجيل الدخول</h2>
+                
+                <form id="fake-login-form">
+                    <div class="input-group">
+                        <label><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                        <input type="email" id="fake-email" placeholder="أدخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label><i class="fas fa-key"></i> كلمة المرور</label>
+                        <input type="password" id="fake-password" placeholder="أدخل كلمة المرور" required>
+                    </div>
+                    
+                    <div class="remember-forgot">
+                        <label class="remember">
+                            <input type="checkbox"> تذكرني
+                        </label>
+                        <a href="#" class="forgot-link">نسيت كلمة المرور؟</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn" id="fake-submit">
+                        <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                    </button>
+                </form>
+                
+                <!-- نصائح أمنية -->
+                <div class="security-tips" id="security-tips" style="display: none;">
+                    <h3><i class="fas fa-lightbulb"></i> ماذا حدث؟</h3>
+                    <ul>
+                        <li><i class="fas fa-times-circle" style="color: #dc3545;"></i> تم محاكاة سرقة بياناتك!</li>
+                        <li><i class="fas fa-times-circle" style="color: #dc3545;"></i> في الواقع، المهاجم سيحصل على بريدك وكلمة المرور</li>
+                        <li><i class="fas fa-check-circle" style="color: #28a745;"></i> لحسن الحظ، هذا مجرد تمرين تعليمي</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 8px;">
+                        <h4>البيانات التي تم اعتراضها:</h4>
+                        <p><strong>البريد:</strong> <span id="stolen-email-display"></span></p>
+                        <p><strong>كلمة المرور:</strong> <span id="stolen-password-display"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- رابط العودة -->
+            <div class="back-link">
+                <a href="../index.html"><i class="fas fa-arrow-right"></i> العودة للصفحة الرئيسية</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('fake-login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('fake-email').value;
+            const password = document.getElementById('fake-password').value;
+            
+            if (!email || !password) {
+                alert('الرجاء إدخال بيانات للتوضيح');
+                return;
+            }
+            
+            // عرض البيانات المسروقة
+            document.getElementById('stolen-email-display').textContent = email;
+            document.getElementById('stolen-password-display').textContent = '*'.repeat(password.length);
+            
+            // إظهار نصائح الأمان
+            document.getElementById('security-tips').style.display = 'block';
+            
+            // تمرير سلس للنصائح
+            document.getElementById('security-tips').scrollIntoView({ behavior: 'smooth' });
+            
+            // تعطيل زر الإرسال مؤقتاً
+            const submitBtn = document.getElementById('fake-submit');
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

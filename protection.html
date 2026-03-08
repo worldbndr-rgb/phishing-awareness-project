@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طرق الحماية من التصيد الاحتيالي</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .protection-page {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 60px 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-title h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .page-title h1 i {
+            color: #28a745;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .protection-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .protection-main-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .protection-main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .protection-main-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon-large {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .card-icon-large i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .protection-main-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .protection-main-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .tips-list {
+            text-align: right;
+            list-style: none;
+        }
+        
+        .tips-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+        
+        .tips-list li i {
+            color: #28a745;
+        }
+        
+        .tools-section {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        
+        .tool-item:hover {
+            background: #e3f2fd;
+            transform: translateX(-5px);
+        }
+        
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .tool-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .tool-info p {
+            color: #666;
+        }
+        
+        .checklist-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 30px;
+            padding: 50px;
+            color: white;
+            margin: 60px 0;
+        }
+        
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .checklist-item i {
+            font-size: 1.5rem;
+            color: #ffc107;
+        }
+        
+        .emergency-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .emergency-box h3 {
+            color: #dc3545;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .emergency-steps {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .back-link a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .protection-cards,
+            .tools-grid,
+            .checklist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .tools-section,
+            .checklist-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="protection-page">
+        <div class="container">
+            <!-- العنوان -->
+            <div class="page-title">
+                <h1><i class="fas fa-shield-halved"></i> طرق الحماية من التصيد الاحتيالي</h1>
+                <p>دليلك الشامل لحماية نفسك وبياناتك من هجمات التصيد</p>
+            </div>
+            
+            <!-- بطاقات الحماية الرئيسية -->
+            <div class="protection-cards">
+                <div class="protection-main-card">
+                    <div class="card-icon-large">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>التدقيق قبل النقر</h3>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check"></i> تحقق من عنوان المرسل جيداً</li>
+                        <li><i class="fas fa-check"></i> مرر المؤشر على الروابط لترى وجهتها الحقيقية</li>
+                        <li><i class="fas fa-check"></i> تأكد من وجود القفل الأخضر https://</li>
+                        <li><i class="fas fa-check"></i> ابحث عن الأخطاء الإملائية</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-main-card">
+                    <div class="card-icon-large">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>المصادقة الثنائية</h3>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check"></i> فعّل المصادقة الثنائية في جميع حساباتك</li>
+                        <li><i class="fas fa-check"></i> استخدم تطبيقات مثل Google Authenticator</li>
+                        <li><i class="fas fa-check"></i> لا تشارك رموز التحقق مع أحد</li>
+                        <li><i class="fas fa-check"></i> استخدم مفاتيح الأمان الفيزيائية إن أمكن</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-main-card">
+                    <div class="card-icon-large">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>كلمات المرور القوية</h3>
+                    <ul class="tips-list">
+                        <li><i class="fas fa-check"></i> استخدم كلمات مرور طويلة ومعقدة</li>
+                        <li><i class="fas fa-check"></i> لا تكرر كلمة المرور نفسها</li>
+                        <li><i class="fas fa-check"></i> استخدم مدير كلمات المرور</li>
+                        <li><i class="fas fa-check"></i> غيّر كلمات المرور بشكل دوري</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- أدوات الحماية -->
+            <div class="tools-section">
+                <h2 style="text-align: center; margin-bottom: 20px;"><i class="fas fa-tools"></i> أدوات وتقنيات الحماية</h2>
+                <p style="text-align: center; color: #666;">استخدم هذه الأدوات لتعزيز حمايتك</p>
+                
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>مدير كلمات المرور</h4>
+                            <p>مثل LastPass, 1Password, Bitwarden</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>مضادات التصيد</h4>
+                            <p>إضافات المتصفح مثل uBlock Origin</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>تطبيقات المصادقة</h4>
+                            <p>Google Authenticator, Microsoft Authenticator</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="tool-info">
+                            <h4>التحديثات الدورية</h4>
+                            <p>تحديث نظام التشغيل والمتصفح والتطبيقات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قائمة التحقق اليومية -->
+            <div class="checklist-section">
+                <h2 style="text-align: center; margin-bottom: 20px;">📋 قائمة التحقق اليومية</

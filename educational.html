@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التوعية بالتصيد الاحتيالي - تعليمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* الهيدر */
+        .edu-header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .edu-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .edu-header h1 i {
+            margin-left: 10px;
+        }
+
+        .edu-header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* بطاقات أنواع التصيد */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .type-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+        }
+
+        .type-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+        }
+
+        .type-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .type-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .type-card p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 5px solid #667eea;
+            margin-top: 15px;
+        }
+
+        .example-box h4 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .example-box h4 i {
+            color: #667eea;
+        }
+
+        .example-box p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* قسم الإحصائيات */
+        .stats-section {
+            background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+            padding: 60px;
+            border-radius: 30px;
+            margin: 60px 0;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* علامات التحذير */
+        .warning-signs {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .warning-signs h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.2rem;
+        }
+
+        .warning-signs h2 i {
+            color: #dc3545;
+            margin-left: 10px;
+        }
+
+        .signs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .sign-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .sign-item:hover {
+            background: #fff;
+            border-color: #667eea;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.2);
+        }
+
+        .sign-item i {
+            font-size: 1.8rem;
+            color: #dc3545;
+        }
+
+        .sign-item span {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* نصائح إضافية */
+        .tips-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 30px;
+            padding: 50px;
+            color: white;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .tips-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tip-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .tip-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .tip-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        /* زر العودة */
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .back-link a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            background: #f8f9fa;
+        }
+
+        /* تحسينات للأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .edu-header h1 {
+                font-size: 2rem;
+            }
+            
+            .edu-header p {
+                font-size: 1rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .signs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-section,
+            .warning-signs,
+            .tips-section {
+                padding: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="edu-header">
+            <h1><i class="fas fa-graduation-cap"></i> التوعية بالتصيد الاحتيالي</h1>
+            <p>تعرف على أنواع التصيد المختلفة وكيفية التعرف عليها</p>
+        </div>
+        
+        <!-- أنواع التصيد -->
+        <div class="types-grid">
+            <div class="type-card">
+                <div class="type-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>تصيد البريد الإلكتروني</h3>
+                <p>أكثر أنواع التصيد شيوعاً، حيث يرسل المهاجم رسائل بريد إلكتروني تبدو وكأنها من شركات موثوقة</p>
+                <div class="example-box">
+                    <h4><i class="fas fa-example"></i> مثال:</h4>
+                    <p>"عزيزي العميل، نود إبلاغك بأن حسابك سيتم تعليقه. الرجاء النقر على الرابط التالي لتحديث معلوماتك"</p>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>التصيد عبر المواقع</h3>
+                <p>إنشاء مواقع وهمية تطابق تماماً مواقع حقيقية لخداع الضحية وإدخال بياناته</p>
+                <div class="example-box">
+                    <h4><i class="fas fa-example"></i> مثال:</h4>
+                    <p>موقع يشبه موقع بنكك لكن الرابط مختلف قليلاً (bankk.com بدلاً من bank.com)</p>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">
+                    <i class="fas fa-sms"></i>
+                </div>
+                <h3>التصيد عبر الرسائل</h3>
+                <p>إرسال رسائل نصية قصيرة (SMS) تحتوي على روابط ضارة</p>
+                <div class="example-box">
+                    <h4><i class="fas fa-example"></i> مثال:</h4>
+                    <p>"لقد فزت بجائزة 10,000 ريال! اضغط هنا لاستلام جائزتك"</p>
+                </div>
+            </div>
+            
+            <div class="type-card">
+                <div class="type-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>التصيد الهاتفي</h3>
+                <p>اتصالات هاتفية يدعي فيها المتصل أنه من جهة رسمية لسرقة معلوماتك</p>
+                <div class="example-box">
+                    <h4><i class="fas fa-example"></i> مثال:</h4>
+                    <p>اتصال من "البنك" يطلب رمز التحقق لتأكيد عملية مشبوهة</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- إحصائيات -->
+        <div class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">3.4B</div>
+                    <div class="stat-label">رسالة تصيد يومياً</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">97%</div>
+                    <div class="stat-label">لا يستطيعون التعرف على التصيد</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$17.7K</div>
+                    <div class="stat-label">يخسر كل دقيقة</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- علامات التحذير -->
+        <div class="warning-signs">
+            <h2><i class="fas fa-exclamation-triangle"></i> علامات تحذيرية في رسائل التصيد</h2>
+            
+            <div class="signs-grid">
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>لغة ملحة وتحذيرات بغلق الحساب</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>أخطاء إملائية ونحوية واضحة</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>روابط غريبة أو مختصرة</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>عروض مغرية جداً (جوائز، مكاسب سريعة)</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>طلب معلومات شخصية أو مالية</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>مرسل غير معروف أو عنوان بريد غريب</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>مرفقات غير متوقعة</span>
+                </div>
+                <div class="sign-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>تحية عامة (عزيزي العميل) بدل الاسم</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- نصائح إضافية -->
+        <div class="tips-section">
+            <h2><i class="fas fa-lightbulb"></i> نصائح مهمة للحماية</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-search"></i>
+                    <h4>تحقق دائماً</h4>
+                    <p>لا تثق بأي رسالة تطلب معلومات شخصية، تحقق من المصدر أولاً</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>استخدم الحماية</h4>
+                    <p>فعّل المصادقة الثنائية واستخدم برامج مكافحة التصيد</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-education"></i>
+                    <h4>ثقف نفسك</h4>
+                    <p>تعلم أحدث طرق التصيد وشارك المعرفة مع عائلتك وأصدقائك</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- رابط العودة -->
+        <div class="back-link">
+            <a href="../index.html"><i class="fas fa-arrow-right"></i> العودة للصفحة الرئيسية</a>
+        </div>
+    </div>
+</body>
+</html>
