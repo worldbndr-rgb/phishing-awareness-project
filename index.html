@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التوعية ضد التصيد الاحتيالي - مشروع التخرج</title>
+    <link rel="stylesheet" href="css/style.css">
+   <!-- يجب إضافة هذه الروابط في قسم head في index.html -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-halved"></i>
+                <span>وعي للتصيد الاحتيالي</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#demo">تجربة تفاعلية</a></li>
+                <li><a href="#education">توعية</a></li>
+                <li><a href="#protection">حماية</a></li>
+                <li><a href="pages/admin-view.html" target="_blank"><i class="fas fa-chart-line"></i> لوحة المشرف</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>احذر <span class="gradient-text">التصيد الاحتيالي</span></h1>
+                <p>مشروع توعوي تفاعلي لشرح مخاطر التصيد الإلكتروني وكيفية حماية نفسك وبياناتك</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">جرب المحاكاة التعليمية</a>
+                    <a href="#education" class="btn btn-secondary">تعلم المزيد</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>+3.4 مليار</h3>
+                    <p>رسالة تصيد يومياً</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percent"></i>
+                    <h3>97%</h3>
+                    <p>لا يستطيعون التعرف على التصيد</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>$17,700</h3>
+                    <p>يخسر كل دقيقة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المحاكاة التعليمية -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <h2 class="section-title">محاكاة تعليمية <span>لصفحة تصيد</span></h2>
+            <p class="section-subtitle">هذه محاكاة تعليمية آمنة لفهم كيفية عمل التصيد الاحتيالي</p>
+            
+            <div class="demo-card">
+                <div class="demo-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h4>⚠️ تنبيه هام - للأغراض التعليمية فقط</h4>
+                        <p>هذه محاكاة تعليمية ضمن مشروع التخرج. الرجاء عدم إدخال بيانات حقيقية.</p>
+                        <p><small>سيتم حفظ البيانات المدخلة وعرضها على المشرف للأغراض الأكاديمية فقط</small></p>
+                    </div>
+                </div>
+                
+                <div class="login-simulation">
+                    <h3>نموذج تسجيل دخول وهمي</h3>
+                    <p>هذا مثال على كيف تبدو صفحة التصيد الاحتيالي</p>
+                    
+                    <form id="phishing-demo-form" class="fake-login-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                            <input type="email" id="demo-email" placeholder="أدخل بريدك الإلكتروني" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                            <input type="password" id="demo-password" placeholder="أدخل كلمة المرور" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-demo-login">
+                            <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                        </button>
+                    </form>
+                    
+                    <div class="demo-explanation" id="demo-explanation" style="display: none;">
+                        <div class="alert alert-danger">
+                            <i class="fas fa-skull-crosswalk"></i>
+                            <h4>تمت محاكاة سرقة البيانات!</h4>
+                            <p>في صفحة تصيد حقيقية، كانت بياناتك سترسل للمهاجم</p>
+                        </div>
+                        
+                        <div class="stolen-data">
+                            <h5>البيانات التي تم اعتراضها:</h5>
+                            <div class="data-row">
+                                <span>البريد الإلكتروني:</span>
+                                <span id="stolen-email"></span>
+                            </div>
+                            <div class="data-row">
+                                <span>كلمة المرور:</span>
+                                <span id="stolen-password"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-tips">
+                            <h5>علامات التحذير في هذه الصفحة:</h5>
+                            <ul>
+                                <li><i class="fas fa-times-circle"></i> الرابط لا يبدأ بـ https://</li>
+                                <li><i class="fas fa-times-circle"></i> تصميم مقلد لموقع حقيقي</li>
+                                <li><i class="fas fa-times-circle"></i> طلب بيانات حساسة دون تحقق</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التوعية -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <h2 class="section-title">كيف <span>يعمل التصيد؟</span></h2>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>استلام الرسالة</h3>
+                    <p>يصل بريد إلكتروني أو رسالة تبدو وكأنها من مصدر موثوق</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-link"></i>
+                    <h3>الضغط على الرابط</h3>
+                    <p>يحتوي البريد على رابط لصفحة دخول مزيفة</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-keyboard"></i>
+                    <h3>إدخال البيانات</h3>
+                    <p>الضحية يدخل بياناته في الصفحة المزيفة</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-user-secret"></i>
+                    <h3>سرقة البيانات</h3>
+                    <p>المهاجم يحصل على البيانات ويستخدمها</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الحماية -->
+    <section class="protection-section" id="protection">
+        <div class="container">
+            <h2 class="section-title">طرق <span>الحماية</span></h2>
+            
+            <div class="protection-grid">
+                <div class="protection-card">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>تحقق من الرابط</h3>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check"></i> تأكد من صحة النطاق (domain)</li>
+                        <li><i class="fas fa-check"></i> ابحث عن القفل الأخضر https://</li>
+                        <li><i class="fas fa-check"></i> تجنب الروابط المختصرة</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>المصادقة الثنائية</h3>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check"></i> فعّل المصادقة الثنائية (2FA)</li>
+                        <li><i class="fas fa-check"></i> استخدم تطبيقات المصادقة</li>
+                        <li><i class="fas fa-check"></i> لا تشارك رموز التحقق</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-card">
+                    <div class="card-icon">
+                        <i class="fas fa-education"></i>
+                    </div>
+                    <h3>التوعية المستمرة</h3>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check"></i> تعلم علامات التصيد</li>
+                        <li><i class="fas fa-check"></i> شارك المعرفة مع الآخرين</li>
+                        <li><i class="fas fa-check"></i> تابع تحديثات الأمن السيبراني</li>
+                    </ul>
+                </div>
+                
+                <div class="protection-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>أدوات الحماية</h3>
+                    <ul class="protection-list">
+                        <li><i class="fas fa-check"></i> استخدم برامج مكافحة التصيد</li>
+                        <li><i class="fas fa-check"></i> حدّث المتصفح دورياً</li>
+                        <li><i class="fas fa-check"></i> استخدم مدير كلمات المرور</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <h3><i class="fas fa-lightbulb"></i> نصائح ذهبية لتجنب التصيد</h3>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <i class="fas fa-ban"></i>
+                        <span>لا تضغط على روابط مشبوهة</span>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>تحقق من عنوان المرسل</span>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-clock"></i>
+                        <span>لا تستعجل في اتخاذ القرار</span>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-phone"></i>
+                        <span>اتصل بالجهة الرسمية للتحقق</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-shield-halved"></i> وعي للتصيد الاحتيالي</h4>
+                    <p>مشروع تخرج تعليمي للتوعية بمخاطر التصيد الإلكتروني وطرق الحماية منه</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#demo">تجربة تفاعلية</a></li>
+                        <li><a href="#education">توعية</a></li>
+                        <li><a href="#protection">حماية</a></li>
+                        <li><a href="pages/admin-view.html">لوحة المشرف</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>إحصائيات</h4>
+                    <div class="footer-stats">
+                        <p>🚨 3.4 مليار هجوم يومي</p>
+                        <p>💡 1 من كل 3 مستخدمين يتعرضون للتصيد</p>
+                        <p>🔒 95% من الاختراقات بسبب التصيد</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 مشروع التوعية ضد التصيد الاحتيالي - جميع الحقوق محفوظة</p>
+                <p class="disclaimer">هذا الموقع تعليمي ولا يجمع أي بيانات حقيقية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
